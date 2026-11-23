@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaming Membership</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #090d18;
+  color: white;
+}
+
+header {
+  background: #111a2c;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #263550;
+}
+
+.logo {
+  color: #00e5ff;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+.hero {
+  text-align: center;
+  padding: 75px 20px;
+  background: linear-gradient(135deg,#101d38,#25134a);
+}
+
+.hero h1 {
+  font-size: 35px;
+  color: #00e5ff;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #c3cce0;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #00c8e8;
+  color: #07111c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+section {
+  padding: 45px 18px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: #00e5ff;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.card {
+  width: 260px;
+  padding: 27px 20px;
+  background: #151f32;
+  border: 1px solid #30425e;
+  border-radius: 14px;
+}
+
+.card h3 {
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 26px;
+  color: #00e5ff;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.card p {
+  color: #bdc9dd;
+  line-height: 1.8;
+}
+
+.donate {
+  background: #111a2c;
+}
+
+.donate p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 330px;
+  padding: 14px;
+  margin: 12px auto;
+  border: 1px solid #344968;
+  background: #090d18;
+  color: white;
+  border-radius: 8px;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #8795aa;
+  background: #070b13;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⚡ GAMEZONE</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#member">Membership</a>
+    <a href="#donate">Donate</a>
+  </nav>
+</header>
+
+<div class="hero" id="home">
+  <h1>WELCOME GAMERS!</h1>
+  <p>
+    Join our gaming community.<br>
+    Become a VIP member and support our community!
+  </p>
+  <a href="#member">
+    <button class="btn">JOIN MEMBERSHIP</button>
+  </a>
+</div>
+
+<section id="member">
+  <h2>⚔️ MEMBERSHIP</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🥉 BRONZE</h3>
+      <div class="price">Rp10.000</div>
+      <p>
+        Basic Member<br>
+        Community Access<br>
+        Member Badge
+      </p>
+      <button class="btn" onclick="join('Bronze')">
+        JOIN NOW
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🥈 SILVER</h3>
+      <div class="price">Rp25.000</div>
+      <p>
+        Silver Member<br>
+        Special Badge<br>
+        Exclusive Community
+      </p>
+      <button class="btn" onclick="join('Silver')">
+        JOIN NOW
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🥇 GOLD</h3>
+      <div class="price">Rp50.000</div>
+      <p>
+        Gold Member<br>
+        Premium Badge<br>
+        VIP Community
+      </p>
+      <button class="btn" onclick="join('Gold')">
+        JOIN NOW
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>💎 DIAMOND</h3>
+      <div class="price">Rp100.000</div>
+      <p>
+        Diamond Member<br>
+        Exclusive Benefits<br>
+        Special VIP Status
+      </p>
+      <button class="btn" onclick="join('Diamond')">
+        JOIN NOW
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="donate" id="donate">
+  <h2>❤️ SUPPORT & DONATE</h2>
+  <p>
+    Support our gaming community!<br>
+    Every donation helps us grow.
+  </p>
+
+  <input
+    type="text"
+    id="donor"
+    placeholder="Your Gaming Name"
+  >
+
+  <input
+    type="number"
+    id="amount"
+    placeholder="Donation Amount (Rp)"
+    min="1000"
+  >
+
+  <button class="btn" onclick="donate()">
+    DONATE NOW
+  </button>
+</section>
+
+<footer>
+  <p>© 2026 GAMEZONE MEMBERSHIP</p>
+  <p>Made for Gamers ❤️</p>
+</footer>
+
+<script>
+
+function join(packageName) {
+  alert(
+    "You selected " + packageName +
+    " Membership!\nContact admin to continue payment."
+  );
+}
+
+function donate() {
+  let name = document.getElementById("donor").value;
+  let amount = document.getElementById("amount").value;
+
+  if (!name || !amount || Number(amount) < 1000) {
+    alert("Please enter your gaming name and a valid donation amount!");
+    return;
+  }
+
+  alert(
+    "Thank you " + name +
+    " for supporting us with Rp" + amount +
+    "!\nPayment integration will be added next."
+  );
+}
+
+</script>
+
+</body>
+      </html>
+      
