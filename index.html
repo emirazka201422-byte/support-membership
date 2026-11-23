@@ -1,287 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gaming Membership</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090d18">
+<title>GameZone — Main Gratis, Upgrade Premium</title>
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #090d18;
-  color: white;
-}
-
-header {
-  background: #111a2c;
-  padding: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #263550;
-}
-
-.logo {
-  color: #00e5ff;
-  font-size: 21px;
-  font-weight: bold;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 12px;
-  font-size: 13px;
-}
-
-.hero {
-  text-align: center;
-  padding: 75px 20px;
-  background: linear-gradient(135deg,#101d38,#25134a);
-}
-
-.hero h1 {
-  font-size: 35px;
-  color: #00e5ff;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  color: #c3cce0;
-  line-height: 1.7;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 13px 25px;
-  border: none;
-  border-radius: 8px;
-  background: #00c8e8;
-  color: #07111c;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-section {
-  padding: 45px 18px;
-  text-align: center;
-}
-
-h2 {
-  margin-bottom: 25px;
-  color: #00e5ff;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 17px;
-}
-
-.card {
-  width: 260px;
-  padding: 27px 20px;
-  background: #151f32;
-  border: 1px solid #30425e;
-  border-radius: 14px;
-}
-
-.card h3 {
-  font-size: 23px;
-  margin-bottom: 15px;
-}
-
-.price {
-  font-size: 26px;
-  color: #00e5ff;
-  font-weight: bold;
-  margin: 15px 0;
-}
-
-.card p {
-  color: #bdc9dd;
-  line-height: 1.8;
-}
-
-.donate {
-  background: #111a2c;
-}
-
-.donate p {
-  color: #cbd5e1;
-  line-height: 1.8;
-}
-
-input {
-  display: block;
-  width: 100%;
-  max-width: 330px;
-  padding: 14px;
-  margin: 12px auto;
-  border: 1px solid #344968;
-  background: #090d18;
-  color: white;
-  border-radius: 8px;
-}
-
-footer {
-  padding: 25px;
-  text-align: center;
-  color: #8795aa;
-  background: #070b13;
-}
-
-</style>
-</head>
-
+:root{--bg:#090d18;--panel:#121c30;--line:#2a3b58;--cyan:#27d9f2;--text:#f4f7ff;--muted:#a9b8d0;--gold:#ffc857}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#0c1424ee;border-bottom:1px solid var(--line);padding:14px clamp(16px,4vw,52px);display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-size:21px;font-weight:900;color:var(--cyan)}nav{display:flex;gap:18px}nav a{color:var(--muted);text-decoration:none;font-size:14px}
+button,.button{border:0;border-radius:10px;padding:12px 17px;background:var(--cyan);color:#06111b;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.ghost{background:transparent;color:white;border:1px solid var(--line)}
+.hero{padding:72px 20px 62px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#193b60,#17143a 45%,transparent 76%),linear-gradient(135deg,#101c32,#160f2c)}
+.eyebrow{color:var(--cyan);font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.05;margin:14px 0}.hero p{color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto 22px}.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.wrap{max-width:1160px;margin:auto;padding:48px 18px}.section-head{text-align:center;margin-bottom:26px}.section-head h2{margin:0 0 9px;font-size:28px}.section-head p{margin:0;color:var(--muted)}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:20px 0 26px}.filter{background:#111b2d;color:var(--muted);border:1px solid var(--line);padding:9px 14px;border-radius:99px}.filter.active{background:#17384b;color:var(--cyan);border-color:#23677b}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.game{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}.art{height:125px;display:grid;place-items:center;font-size:55px;background:linear-gradient(135deg,#173b58,#30204e)}.game:nth-child(3n+2) .art{background:linear-gradient(135deg,#43305c,#183b4b)}.game:nth-child(3n) .art{background:linear-gradient(135deg,#5a3a28,#1b3151)}.game-info{padding:15px}.game-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.game h3{font-size:17px;margin:0}.tag{font-size:10px;font-weight:900;padding:5px 8px;border-radius:99px;background:#143b2c;color:#79e5a8;white-space:nowrap}.tag.premium{background:#49391c;color:var(--gold)}.game p{font-size:12px;color:var(--muted);min-height:34px;line-height:1.5}.game button{width:100%;padding:10px}.game button.locked{background:#27344b;color:#e8d39d}
+.member{background:linear-gradient(145deg,#14213a,#21163b);border:1px solid #57472c;border-radius:20px;padding:30px 20px;text-align:center;max-width:700px;margin:auto}.member h2{margin:8px 0}.price{font-size:38px;color:var(--gold);font-weight:900;margin:12px}.member p{color:var(--muted);line-height:1.7}.member ul{display:inline-block;text-align:left;color:#e6edf8;line-height:1.9;margin:5px auto 15px}.note{font-size:12px;color:var(--muted);margin-top:14px}
+footer{text-align:center;padding:26px 16px;border-top:1px solid var(--line);color:#8190a8;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:#020611d9;z-index:10;padding:18px;align-items:center;justify-content:center}.modal.show{display:flex}.dialog{width:min(100%,420px);background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}.dialog h2{margin:0 0 8px}.dialog p{color:var(--muted);line-height:1.6;font-size:14px}.close{position:absolute;right:13px;top:12px;background:transparent;color:white;font-size:22px;padding:5px 10px}.dialog input{width:100%;padding:12px;margin:7px 0 12px;border:1px solid var(--line);border-radius:9px;background:#090f1c;color:white}.dialog .wide{width:100%}
+@media(max-width:600px){header{flex-wrap:wrap}nav{order:3;width:100%;justify-content:center}.hero{padding-top:54px}.wrap{padding-top:38px}}
+</style></head>
 <body>
-
-<header>
-  <div class="logo">⚡ GAMEZONE</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#member">Membership</a>
-    <a href="#donate">Donate</a>
-  </nav>
-</header>
-
-<div class="hero" id="home">
-  <h1>WELCOME GAMERS!</h1>
-  <p>
-    Join our gaming community.<br>
-    Become a VIP member and support our community!
-  </p>
-  <a href="#member">
-    <button class="btn">JOIN MEMBERSHIP</button>
-  </a>
-</div>
-
-<section id="member">
-  <h2>⚔️ MEMBERSHIP</h2>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>🥉 BRONZE</h3>
-      <div class="price">Rp10.000</div>
-      <p>
-        Basic Member<br>
-        Community Access<br>
-        Member Badge
-      </p>
-      <button class="btn" onclick="join('Bronze')">
-        JOIN NOW
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>🥈 SILVER</h3>
-      <div class="price">Rp25.000</div>
-      <p>
-        Silver Member<br>
-        Special Badge<br>
-        Exclusive Community
-      </p>
-      <button class="btn" onclick="join('Silver')">
-        JOIN NOW
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>🥇 GOLD</h3>
-      <div class="price">Rp50.000</div>
-      <p>
-        Gold Member<br>
-        Premium Badge<br>
-        VIP Community
-      </p>
-      <button class="btn" onclick="join('Gold')">
-        JOIN NOW
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>💎 DIAMOND</h3>
-      <div class="price">Rp100.000</div>
-      <p>
-        Diamond Member<br>
-        Exclusive Benefits<br>
-        Special VIP Status
-      </p>
-      <button class="btn" onclick="join('Diamond')">
-        JOIN NOW
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<section class="donate" id="donate">
-  <h2>❤️ SUPPORT & DONATE</h2>
-  <p>
-    Support our gaming community!<br>
-    Every donation helps us grow.
-  </p>
-
-  <input
-    type="text"
-    id="donor"
-    placeholder="Your Gaming Name"
-  >
-
-  <input
-    type="number"
-    id="amount"
-    placeholder="Donation Amount (Rp)"
-    min="1000"
-  >
-
-  <button class="btn" onclick="donate()">
-    DONATE NOW
-  </button>
-</section>
-
-<footer>
-  <p>© 2026 GAMEZONE MEMBERSHIP</p>
-  <p>Made for Gamers ❤️</p>
-</footer>
-
+<header><div class="logo">⚡ GAMEZONE</div><nav><a href="#home">Beranda</a><a href="#games">Daftar Game</a><a href="#member">Premium Pass</a></nav><button class="ghost" onclick="openAuth('login')">Masuk</button></header>
+<main>
+<section class="hero" id="home"><div class="eyebrow">Tempat main game favoritmu</div><h1>MAIN. SERU. <span style="color:var(--cyan)">NAIK LEVEL.</span></h1><p>Mainkan game gratis tanpa akun. Ingin membuka semua game eksklusif? Gabung dengan satu Premium Pass.</p><div class="hero-actions"><a class="button" href="#games">JELAJAHI GAME</a><a class="button ghost" href="#member">LIHAT PREMIUM PASS</a></div></section>
+<section class="wrap" id="games"><div class="section-head"><h2>🎮 PILIH GAME</h2><p>4 game gratis • 6 game khusus Premium Pass</p></div>
+<div class="filters"><button class="filter active" onclick="filterGames('all',this)">Semua (10)</button><button class="filter" onclick="filterGames('free',this)">Gratis (4)</button><button class="filter" onclick="filterGames('premium',this)">Premium (6)</button></div>
+<div class="games" id="gameGrid">
+<article class="game" data-type="free"><div class="art">🏎️</div><div class="game-info"><div class="game-top"><h3>Turbo Racer</h3><span class="tag">GRATIS</span></div><p>Balapan cepat dan hindari rintangan.</p><button onclick="playFree('Turbo Racer')">Mainkan</button></div></article>
+<article class="game" data-type="free"><div class="art">🧩</div><div class="game-info"><div class="game-top"><h3>Brain Puzzle</h3><span class="tag">GRATIS</span></div><p>Asah otak dengan tantangan teka-teki.</p><button onclick="playFree('Brain Puzzle')">Mainkan</button></div></article>
+<article class="game" data-type="free"><div class="art">⚽</div><div class="game-info"><div class="game-top"><h3>Mini Soccer</h3><span class="tag">GRATIS</span></div><p>Cetak gol dan kalahkan skor terbaikmu.</p><button onclick="playFree('Mini Soccer')">Mainkan</button></div></article>
+<article class="game" data-type="free"><div class="art">🧱</div><div class="game-info"><div class="game-top"><h3>Block Builder</h3><span class="tag">GRATIS</span></div><p>Susun balok dan selesaikan level.</p><button onclick="playFree('Block Builder')">Mainkan</button></div></article>
+<article class="game" data-type="premium"><div class="art">🥷</div><div class="game-info"><div class="game-top"><h3>Ninja Quest</h3><span class="tag premium">PREMIUM</span></div><p>Petualangan ninja penuh tantangan.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
+<article class="game" data-type="premium"><div class="art">🚀</div><div class="game-info"><div class="game-top"><h3>Galaxy Attack</h3><span class="tag premium">PREMIUM</span></div><p>Hadapi gelombang musuh di luar angkasa.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
+<article class="game" data-type="premium"><div class="art">🏰</div><div class="game-info"><div class="game-top"><h3>Castle Defender</h3><span class="tag premium">PREMIUM</span></div><p>Lindungi kerajaan dari serangan musuh.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
+<article class="game" data-type="premium"><div class="art">🏍️</div><div class="game-info"><div class="game-top"><h3>Extreme Moto</h3><span class="tag premium">PREMIUM</span></div><p>Taklukkan lintasan ekstrem.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
+<article class="game" data-type="premium"><div class="art">🧟</div><div class="game-info"><div class="game-top"><h3>Zombie Survival</h3><span class="tag premium">PREMIUM</span></div><p>Bertahan hidup dari serangan zombie.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
+<article class="game" data-type="premium"><div class="art">🐉</div><div class="game-info"><div class="game-top"><h3>Dragon Adventure</h3><span class="tag premium">PREMIUM</span></div><p>Jelajahi dunia fantasi bersama naga.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
+</div><p class="note">Tahap awal: ini katalog dan tampilan. Game asli serta sistem akun akan disambungkan setelah file game dan layanan backend disiapkan.</p></section>
+<section class="wrap" id="member"><div class="member"><div class="eyebrow">Satu membership. Akses selamanya.</div><h2>👑 PREMIUM PASS</h2><div class="price">Rp15.000</div><p>Sekali bayar untuk membuka akses ke 6 game Premium.</p><ul><li>Akses 6 game eksklusif</li><li>Satu kali pembayaran</li><li>Berlaku selamanya pada akunmu</li></ul><br><button onclick="openAuth('register')">DAFTAR / BELI PREMIUM</button><div class="note">Pembayaran QRIS/GoPay dan aktivasi otomatis belum dihubungkan. Jangan membayar sebelum instruksi pembayaran resmi tersedia.</div></div></section>
+</main><footer>© 2026 GAMEZONE • Dibuat untuk para gamer ❤️</footer>
+<div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeAuth()"><div class="dialog"><button class="close" aria-label="Tutup" onclick="closeAuth()">×</button><h2 id="modalTitle">Masuk ke GameZone</h2><p id="modalText">Fitur akun sedang disiapkan. Pembuatan akun aman memerlukan layanan backend.</p><label for="email">Email</label><input id="email" type="email" placeholder="nama@email.com" autocomplete="email" disabled><label for="password">Kata sandi</label><input id="password" type="password" placeholder="Minimal 8 karakter" autocomplete="current-password" disabled><button class="wide" onclick="alert('Sistem akun belum aktif. Belum ada data yang dikirim atau disimpan.')">Belum tersedia</button><p class="note">Form ini belum mengirim atau menyimpan data apa pun.</p></div></div>
 <script>
-
-function join(packageName) {
-  alert(
-    "You selected " + packageName +
-    " Membership!\nContact admin to continue payment."
-  );
-}
-
-function donate() {
-  let name = document.getElementById("donor").value;
-  let amount = document.getElementById("amount").value;
-
-  if (!name || !amount || Number(amount) < 1000) {
-    alert("Please enter your gaming name and a valid donation amount!");
-    return;
-  }
-
-  alert(
-    "Thank you " + name +
-    " for supporting us with Rp" + amount +
-    "!\nPayment integration will be added next."
-  );
-}
-
-</script>
-
-</body>
-      </html>
-      
+function filterGames(type,button){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));button.classList.add('active');document.querySelectorAll('.game').forEach(card=>card.style.display=type==='all'||card.dataset.type===type?'':'none')}
+function openAuth(mode){document.getElementById('modalTitle').textContent=mode==='register'?'Daftar & Beli Premium':'Masuk ke GameZone';document.getElementById('authModal').classList.add('show')}
+function closeAuth(){document.getElementById('authModal').classList.remove('show')}
+function premiumGate(){openAuth('login')}
+function playFree(game){alert('"'+game+'" sudah masuk daftar game gratis. Game aslinya akan dipasang pada tahap berikutnya.')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAuth()});
+</script></body></html>
