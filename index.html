@@ -1,50 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090d18">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d18">
 <title>GameZone — Main Gratis, Upgrade Premium</title>
 <style>
 :root{--bg:#090d18;--panel:#121c30;--line:#2a3b58;--cyan:#27d9f2;--text:#f4f7ff;--muted:#a9b8d0;--gold:#ffc857}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Arial,sans-serif}
-header{position:sticky;top:0;z-index:5;background:#0c1424ee;border-bottom:1px solid var(--line);padding:14px clamp(16px,4vw,52px);display:flex;align-items:center;justify-content:space-between;gap:14px}
+header{position:sticky;top:0;z-index:5;background:#0c1424ee;border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .logo{font-size:21px;font-weight:900;color:var(--cyan)}nav{display:flex;gap:18px}nav a{color:var(--muted);text-decoration:none;font-size:14px}
 button,.button{border:0;border-radius:10px;padding:12px 17px;background:var(--cyan);color:#06111b;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.ghost{background:transparent;color:white;border:1px solid var(--line)}
-.hero{padding:72px 20px 62px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#193b60,#17143a 45%,transparent 76%),linear-gradient(135deg,#101c32,#160f2c)}
-.eyebrow{color:var(--cyan);font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.05;margin:14px 0}.hero p{color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto 22px}.hero-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.wrap{max-width:1160px;margin:auto;padding:48px 18px}.section-head{text-align:center;margin-bottom:26px}.section-head h2{margin:0 0 9px;font-size:28px}.section-head p{margin:0;color:var(--muted)}
-.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:20px 0 26px}.filter{background:#111b2d;color:var(--muted);border:1px solid var(--line);padding:9px 14px;border-radius:99px}.filter.active{background:#17384b;color:var(--cyan);border-color:#23677b}
-.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.game{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}.art{height:125px;display:grid;place-items:center;font-size:55px;background:linear-gradient(135deg,#173b58,#30204e)}.game:nth-child(3n+2) .art{background:linear-gradient(135deg,#43305c,#183b4b)}.game:nth-child(3n) .art{background:linear-gradient(135deg,#5a3a28,#1b3151)}.game-info{padding:15px}.game-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.game h3{font-size:17px;margin:0}.tag{font-size:10px;font-weight:900;padding:5px 8px;border-radius:99px;background:#143b2c;color:#79e5a8;white-space:nowrap}.tag.premium{background:#49391c;color:var(--gold)}.game p{font-size:12px;color:var(--muted);min-height:34px;line-height:1.5}.game button{width:100%;padding:10px}.game button.locked{background:#27344b;color:#e8d39d}
-.member{background:linear-gradient(145deg,#14213a,#21163b);border:1px solid #57472c;border-radius:20px;padding:30px 20px;text-align:center;max-width:700px;margin:auto}.member h2{margin:8px 0}.price{font-size:38px;color:var(--gold);font-weight:900;margin:12px}.member p{color:var(--muted);line-height:1.7}.member ul{display:inline-block;text-align:left;color:#e6edf8;line-height:1.9;margin:5px auto 15px}.note{font-size:12px;color:var(--muted);margin-top:14px}
+.hero{padding:65px 20px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#193b60,#17143a 45%,transparent 76%),linear-gradient(135deg,#101c32,#160f2c)}
+.eyebrow{color:var(--cyan);font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.05;margin:14px 0}.hero p{color:var(--muted);line-height:1.7;max-width:600px;margin:0 auto 22px}
+.wrap{max-width:1160px;margin:auto;padding:44px 18px}.section-head{text-align:center;margin-bottom:24px}.section-head h2{margin:0 0 9px;font-size:28px}.section-head p,.note{color:var(--muted)}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:20px 0 26px}.filter{background:#111b2d;color:var(--muted);border:1px solid var(--line);padding:9px 14px;border-radius:99px}.filter.active{background:#17384b;color:var(--cyan)}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.game{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}.art{height:120px;display:grid;place-items:center;font-size:55px;background:linear-gradient(135deg,#173b58,#30204e)}.game-info{padding:15px}.game-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.game h3{font-size:17px;margin:0}.tag{font-size:10px;font-weight:900;padding:5px 8px;border-radius:99px;background:#143b2c;color:#79e5a8}.tag.premium{background:#49391c;color:var(--gold)}.game p{font-size:12px;color:var(--muted);min-height:34px;line-height:1.5}.game button{width:100%;padding:10px}.locked{background:#27344b;color:#e8d39d}
+.member{background:linear-gradient(145deg,#14213a,#21163b);border:1px solid #57472c;border-radius:20px;padding:30px 20px;text-align:center;max-width:700px;margin:auto}.price{font-size:38px;color:var(--gold);font-weight:900;margin:12px}.member p{color:var(--muted);line-height:1.7}.member ul{display:inline-block;text-align:left;line-height:1.9}
 footer{text-align:center;padding:26px 16px;border-top:1px solid var(--line);color:#8190a8;font-size:13px}
-.modal{display:none;position:fixed;inset:0;background:#020611d9;z-index:10;padding:18px;align-items:center;justify-content:center}.modal.show{display:flex}.dialog{width:min(100%,420px);background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}.dialog h2{margin:0 0 8px}.dialog p{color:var(--muted);line-height:1.6;font-size:14px}.close{position:absolute;right:13px;top:12px;background:transparent;color:white;font-size:22px;padding:5px 10px}.dialog input{width:100%;padding:12px;margin:7px 0 12px;border:1px solid var(--line);border-radius:9px;background:#090f1c;color:white}.dialog .wide{width:100%}
-@media(max-width:600px){header{flex-wrap:wrap}nav{order:3;width:100%;justify-content:center}.hero{padding-top:54px}.wrap{padding-top:38px}}
+.modal{display:none;position:fixed;inset:0;background:#020611ed;z-index:10;padding:12px;align-items:center;justify-content:center;overflow:auto}.modal.show{display:flex}.dialog{width:min(100%,850px);background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px}.game-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.game-head h2{font-size:19px}.hud{color:#b9c8df;font-size:13px;margin:8px 0}.board{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#081225;border:1px solid #30415d;border-radius:12px;touch-action:none}.help{font-size:12px;color:var(--muted);line-height:1.5}.actions{display:flex;gap:8px;margin-top:10px}.actions button{flex:1}
+@media(max-width:600px){nav{order:3;width:100%;justify-content:center}.hero{padding-top:48px}.wrap{padding-top:34px}}
 </style></head>
 <body>
-<header><div class="logo">⚡ GAMEZONE</div><nav><a href="#home">Beranda</a><a href="#games">Daftar Game</a><a href="#member">Premium Pass</a></nav><button class="ghost" onclick="openAuth('login')">Masuk</button></header>
+<header><div class="logo">⚡ GAMEZONE</div><nav><a href="#home">Beranda</a><a href="#games">Daftar Game</a><a href="#member">Premium Pass</a></nav><a class="button ghost" href="#member">Premium</a></header>
 <main>
-<section class="hero" id="home"><div class="eyebrow">Tempat main game favoritmu</div><h1>MAIN. SERU. <span style="color:var(--cyan)">NAIK LEVEL.</span></h1><p>Mainkan game gratis tanpa akun. Ingin membuka semua game eksklusif? Gabung dengan satu Premium Pass.</p><div class="hero-actions"><a class="button" href="#games">JELAJAHI GAME</a><a class="button ghost" href="#member">LIHAT PREMIUM PASS</a></div></section>
+<section class="hero" id="home"><div class="eyebrow">Tempat main game favoritmu</div><h1>MAIN. SERU. <span style="color:var(--cyan)">NAIK LEVEL.</span></h1><p>Mainkan game gratis tanpa akun. Gabung Premium Pass untuk membuka enam game eksklusif.</p><a class="button" href="#games">JELAJAHI GAME</a></section>
 <section class="wrap" id="games"><div class="section-head"><h2>🎮 PILIH GAME</h2><p>4 game gratis • 6 game khusus Premium Pass</p></div>
 <div class="filters"><button class="filter active" onclick="filterGames('all',this)">Semua (10)</button><button class="filter" onclick="filterGames('free',this)">Gratis (4)</button><button class="filter" onclick="filterGames('premium',this)">Premium (6)</button></div>
-<div class="games" id="gameGrid">
-<article class="game" data-type="free"><div class="art">🏎️</div><div class="game-info"><div class="game-top"><h3>Turbo Racer</h3><span class="tag">GRATIS</span></div><p>Balapan cepat dan hindari rintangan.</p><button onclick="playFree('Turbo Racer')">Mainkan</button></div></article>
-<article class="game" data-type="free"><div class="art">🧩</div><div class="game-info"><div class="game-top"><h3>Brain Puzzle</h3><span class="tag">GRATIS</span></div><p>Asah otak dengan tantangan teka-teki.</p><button onclick="playFree('Brain Puzzle')">Mainkan</button></div></article>
-<article class="game" data-type="free"><div class="art">⚽</div><div class="game-info"><div class="game-top"><h3>Mini Soccer</h3><span class="tag">GRATIS</span></div><p>Cetak gol dan kalahkan skor terbaikmu.</p><button onclick="playFree('Mini Soccer')">Mainkan</button></div></article>
-<article class="game" data-type="free"><div class="art">🧱</div><div class="game-info"><div class="game-top"><h3>Block Builder</h3><span class="tag">GRATIS</span></div><p>Susun balok dan selesaikan level.</p><button onclick="playFree('Block Builder')">Mainkan</button></div></article>
-<article class="game" data-type="premium"><div class="art">🥷</div><div class="game-info"><div class="game-top"><h3>Ninja Quest</h3><span class="tag premium">PREMIUM</span></div><p>Petualangan ninja penuh tantangan.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
-<article class="game" data-type="premium"><div class="art">🚀</div><div class="game-info"><div class="game-top"><h3>Galaxy Attack</h3><span class="tag premium">PREMIUM</span></div><p>Hadapi gelombang musuh di luar angkasa.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
-<article class="game" data-type="premium"><div class="art">🏰</div><div class="game-info"><div class="game-top"><h3>Castle Defender</h3><span class="tag premium">PREMIUM</span></div><p>Lindungi kerajaan dari serangan musuh.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
-<article class="game" data-type="premium"><div class="art">🏍️</div><div class="game-info"><div class="game-top"><h3>Extreme Moto</h3><span class="tag premium">PREMIUM</span></div><p>Taklukkan lintasan ekstrem.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
-<article class="game" data-type="premium"><div class="art">🧟</div><div class="game-info"><div class="game-top"><h3>Zombie Survival</h3><span class="tag premium">PREMIUM</span></div><p>Bertahan hidup dari serangan zombie.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
-<article class="game" data-type="premium"><div class="art">🐉</div><div class="game-info"><div class="game-top"><h3>Dragon Adventure</h3><span class="tag premium">PREMIUM</span></div><p>Jelajahi dunia fantasi bersama naga.</p><button class="locked" onclick="premiumGate()">🔒 Buka dengan Premium</button></div></article>
-</div><p class="note">Tahap awal: ini katalog dan tampilan. Game asli serta sistem akun akan disambungkan setelah file game dan layanan backend disiapkan.</p></section>
-<section class="wrap" id="member"><div class="member"><div class="eyebrow">Satu membership. Akses selamanya.</div><h2>👑 PREMIUM PASS</h2><div class="price">Rp15.000</div><p>Sekali bayar untuk membuka akses ke 6 game Premium.</p><ul><li>Akses 6 game eksklusif</li><li>Satu kali pembayaran</li><li>Berlaku selamanya pada akunmu</li></ul><br><button onclick="openAuth('register')">DAFTAR / BELI PREMIUM</button><div class="note">Pembayaran QRIS/GoPay dan aktivasi otomatis belum dihubungkan. Jangan membayar sebelum instruksi pembayaran resmi tersedia.</div></div></section>
+<div class="games" id="gameGrid"></div><p class="note">Game gratis dapat langsung dimainkan. Tombol Premium saat ini menampilkan info karena verifikasi membership dan pembayaran perlu backend yang aman.</p></section>
+<section class="wrap" id="member"><div class="member"><div class="eyebrow">Satu membership</div><h2>👑 PREMIUM PASS</h2><div class="price">Rp15.000</div><p>Akses enam game eksklusif dengan satu Premium Pass.</p><ul><li>6 game premium</li><li>Satu jenis membership</li><li>Verifikasi akses perlu diaktifkan melalui backend</li></ul><p class="note">Pembayaran belum terhubung. Jangan mengirim uang sebelum metode pembayaran resmi ditampilkan.</p></div></section>
 </main><footer>© 2026 GAMEZONE • Dibuat untuk para gamer ❤️</footer>
-<div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeAuth()"><div class="dialog"><button class="close" aria-label="Tutup" onclick="closeAuth()">×</button><h2 id="modalTitle">Masuk ke GameZone</h2><p id="modalText">Fitur akun sedang disiapkan. Pembuatan akun aman memerlukan layanan backend.</p><label for="email">Email</label><input id="email" type="email" placeholder="nama@email.com" autocomplete="email" disabled><label for="password">Kata sandi</label><input id="password" type="password" placeholder="Minimal 8 karakter" autocomplete="current-password" disabled><button class="wide" onclick="alert('Sistem akun belum aktif. Belum ada data yang dikirim atau disimpan.')">Belum tersedia</button><p class="note">Form ini belum mengirim atau menyimpan data apa pun.</p></div></div>
+<div class="modal" id="playModal"><div class="dialog"><div class="game-head"><h2 id="gameTitle">Game</h2><button class="ghost" onclick="closeGame()">✕ Tutup</button></div><div class="hud" id="hud"></div><canvas class="board" id="board" width="800" height="450"></canvas><div class="actions"><button onclick="restartGame()">↻ Ulangi</button><button class="ghost" onclick="closeGame()">Kembali</button></div><p class="help" id="help"></p></div></div>
 <script>
-function filterGames(type,button){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));button.classList.add('active');document.querySelectorAll('.game').forEach(card=>card.style.display=type==='all'||card.dataset.type===type?'':'none')}
-function openAuth(mode){document.getElementById('modalTitle').textContent=mode==='register'?'Daftar & Beli Premium':'Masuk ke GameZone';document.getElementById('authModal').classList.add('show')}
-function closeAuth(){document.getElementById('authModal').classList.remove('show')}
-function premiumGate(){openAuth('login')}
-function playFree(game){alert('"'+game+'" sudah masuk daftar game gratis. Game aslinya akan dipasang pada tahap berikutnya.')}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAuth()});
+const games=[
+['Turbo Racer','🏎️','Balapan dan hindari rintangan.','free','race'],
+['Brain Puzzle','🧩','Temukan delapan pasangan kartu.','free','memory'],
+['Mini Soccer','⚽','Tendang bola melewati kiper.','free','soccer'],
+['Block Builder','🧱','Tumpuk balok setepat mungkin.','free','stack'],
+['Ninja Quest','🥷','Sentuh buah, hindari bom.','premium','fruit'],
+['Galaxy Attack','🚀','Geser pesawat dan hindari alien.','premium','space'],
+['Castle Defender','🏰','Sentuh monster sebelum sampai kastil.','premium','defend'],
+['Extreme Moto','🏍️','Lompat melewati rintangan.','premium','moto'],
+['Zombie Survival','🧟','Sentuh zombie sebelum mendekat.','premium','zombie'],
+['Dragon Adventure','🐉','Tangkap permata, hindari api.','premium','dragon']
+];
+const grid=document.getElementById('gameGrid');
+games.forEach((g,i)=>{let a=document.createElement('article');a.className='game';a.dataset.type=g[3];a.innerHTML=`<div class="art">${g[1]}</div><div class="game-info"><div class="game-top"><h3>${g[0]}</h3><span class="tag ${g[3]}">${g[3]==='free'?'GRATIS':'PREMIUM'}</span></div><p>${g[2]}</p><button class="${g[3]==='premium'?'locked':''}" onclick="launch(${i})">${g[3]==='free'?'▶ Mainkan':'🔒 Premium Pass'}</button></div>`;grid.appendChild(a)});
+function filterGames(t,b){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.game').forEach(x=>x.style.display=t==='all'||x.dataset.type===t?'':'none')}
+const c=document.getElementById('board'),x=c.getContext('2d');let s=null,raf=0,last=0;
+function launch(i){let g=games[i];if(g[3]==='premium'){alert('Game ini khusus Premium Pass. Sistem akun dan verifikasi pembayaran sedang disiapkan.');return}start(i)}
+function start(i){cancelAnimationFrame(raf);let g=games[i];s={i,mode:g[4],score:0,lives:3,t:0,spawn:0,objs:[],bullets:[],px:400,lane:1,over:false,blocks:[{x:180,w:440}],move:0,dir:1,cards:Array.from({length:8},(_,j)=>j+1).flatMap(v=>[v,v]).sort(()=>Math.random()-.5),revealed:[],matched:[],shots:5,keeper:Math.floor(Math.random()*3),jump:0};document.getElementById('gameTitle').textContent=g[1]+' '+g[0];document.getElementById('help').textContent=g[2]+' Kontrol: sentuh area permainan.';document.getElementById('playModal').classList.add('show');last=0;raf=requestAnimationFrame(loop)}
+function closeGame(){document.getElementById('playModal').classList.remove('show');cancelAnimationFrame(raf);s=null}
+function restartGame(){if(s)start(s.i)}
+function finish(){s.over=true}
+function loop(ts){if(!s||!document.getElementById('playModal').classList.contains('show'))return;let dt=Math.min((ts-(last||ts))/1000,.04);last=ts;update(dt);draw();raf=requestAnimationFrame(loop)}
+function update(dt){if(s.over)return;s.t+=dt;s.spawn+=dt;let m=s.mode;
+if(m==='race'){if(s.spawn>.8){s.objs.push({x:[270,400,530][Math.floor(Math.random()*3)],y:-30});s.spawn=0}s.objs.forEach(o=>o.y+=245*dt);s.objs=s.objs.filter(o=>o.y<480);s.objs.forEach(o=>{if(!o.hit&&o.y>350&&o.y<420&&Math.abs(o.x-[270,400,530][s.lane])<35){o.hit=1;s.lives--;if(!s.lives)finish()}if(!o.count&&o.y>430){o.count=1;s.score++}})}
+if(m==='stack'){s.move+=s.dir*230*dt;if(s.move>350||s.move<0)s.dir*=-1}
+if(['fruit','zombie','dragon','defend','space','moto'].includes(m)){let rate={fruit:.75,zombie:.95,dragon:.7,defend:1.1,space:.8,moto:1.2}[m];if(s.spawn>rate){s.objs.push({x:40+Math.random()*720,y:-25,bad:Math.random()<.28,hit:0});s.spawn=0}}
+if(['fruit','zombie','dragon'].includes(m)){s.objs.forEach(o=>o.y+=(m==='zombie'?90:155)*dt);for(let j=s.objs.length-1;j>=0;j--){let o=s.objs[j];if(o.y>425){s.objs.splice(j,1);if(m==='zombie'){s.lives--;if(!s.lives)finish()}}}if(m==='fruit'&&s.t>35)finish()}
+if(m==='space'){s.objs.forEach(o=>o.y+=115*dt);s.bullets.forEach(b=>b.y-=330*dt);if(s.t%0.22<dt)s.bullets.push({x:s.px,y:370});for(let j=s.objs.length-1;j>=0;j--){let o=s.objs[j],k=s.bullets.findIndex(b=>Math.abs(b.x-o.x)<28&&Math.abs(b.y-o.y)<25);if(k>=0){s.objs.splice(j,1);s.bullets.splice(k,1);s.score+=10}else if(o.y>370&&Math.abs(o.x-s.px)<35){s.objs.splice(j,1);s.lives--;if(!s.lives)finish()}}}
+if(m==='defend'){s.objs.forEach(o=>o.x-=110*dt);for(let j=s.objs.length-1;j>=0;j--)if(s.objs[j].x<70){s.objs.splice(j,1);s.lives--;if(!s.lives)finish()}}
+if(m==='moto'){s.objs.forEach(o=>o.x-=260*dt);s.objs=s.objs.filter(o=>o.x>-30);if(s.jump>0)s.jump-=dt;for(let o of s.objs)if(!o.hit&&o.x<190&&o.x>125){o.hit=1;if(s.jump<=0){s.lives--;if(!s.lives)finish()}else s.score+=5}}
+document.getElementById('hud').textContent=`Skor: ${s.score} • Nyawa: ${s.lives}`+(m==='soccer'?` • Tendangan: ${s.shots}`:'')}
+function draw(){let m=s.mode;x.clearRect(0,0,800,450);let gr=x.createLinearGradient(0,0,800,450);gr.addColorStop(0,'#102b49');gr.addColorStop(1,'#17132f');x.fillStyle=gr;x.fillRect(0,0,800,450);x.textAlign='center';x.textBaseline='middle';const t=(v,a,b,z=34)=>{x.font=z+'px system-ui';x.fillText(v,a,b)};
+if(m==='race'){x.fillStyle='#26364e';x.fillRect(205,0,390,450);x.strokeStyle='white';x.setLineDash([24,20]);x.beginPath();x.moveTo(335,0);x.lineTo(335,450);x.moveTo(465,0);x.lineTo(465,450);x.stroke();x.setLineDash([]);s.objs.forEach(o=>t('🚙',o.x,o.y));t('🏎️',[270,400,530][s.lane],385,42)}
+if(m==='memory'){for(let i=0;i<16;i++){let a=130+i%4*138,b=40+Math.floor(i/4)*94,open=s.revealed.includes(i)||s.matched.includes(i);x.fillStyle=open?'#1b7181':'#263b5b';x.fillRect(a,b,118,78);t(open?['🍀','🍎','🚀','🐱','⭐','🎈','🍉','⚽'][s.cards[i]-1]:'?',a+59,b+39,open?30:34)}t(`Pasangan: ${s.matched.length/2}/8`,400,425,20)}
+if(m==='soccer'){x.fillStyle='#276342';x.fillRect(0,0,800,450);x.strokeStyle='white';x.strokeRect(170,40,460,180);t('🥅',400,125,85);t('🧤',285+s.keeper*115,185,48);t('⚽',400,335,42);t('TENDANG: KIRI • TENGAH • KANAN',400,270,22)}
+if(m==='stack'){x.fillStyle='#25435d';x.fillRect(100,390,600,24);s.blocks.forEach((b,i)=>{x.fillStyle=['#28c5d7','#9b79e8','#f4b64c'][i%3];x.fillRect(b.x,390-i*32,b.w,28)});let p=s.blocks.at(-1);x.fillStyle='#f4b64c';x.fillRect(100+s.move,390-s.blocks.length*32,p.w,28);t('SENTUH UNTUK MENJATUHKAN',400,45,20)}
+let emoji={fruit:o=>o.bad?'💣':'🍉',space:o=>'👾',defend:o=>'👹',moto:o=>'🪨',zombie:o=>'🧟',dragon:o=>o.bad?'🔥':'💎'};
+if(emoji[m])s.objs.forEach(o=>t(emoji[m](o),o.x,o.y,38));
+if(m==='space'){s.bullets.forEach(b=>t('•',b.x,b.y,25));t('🚀',s.px,390,44)}
+if(m==='defend'){x.fillStyle='#b88b4b';x.fillRect(25,130,65,270);t('🏰',60,105,52)}
+if(m==='moto')t('🏍️',160,s.jump>0?290:360,45);
+if(m==='dragon')t('🐉',s.px,385,48);
+if(m==='fruit')t('SENTUH BUAH, HINDARI BOM',400,35,20);
+if(m==='zombie')t('SENTUH ZOMBIE',400,35,20);
+if(s.over){x.fillStyle='#020611c9';x.fillRect(0,0,800,450);t('SELESAI!',400,190,48);t('Skor akhir: '+s.score,400,250,28);t('Tekan ULANGI untuk main lagi',400,300,20)}}
+c.addEventListener('pointerdown',e=>{if(!s||s.over)return;let r=c.getBoundingClientRect(),px=(e.clientX-r.left)*800/r.width,py=(e.clientY-r.top)*450/r.height,m=s.mode;
+if(m==='race'){s.lane=px<330?0:px>470?2:1}
+if(m==='memory'){let col=Math.floor((px-130)/138),row=Math.floor((py-40)/94),i=row*4+col;if(col<0||col>3||row<0||row>3||s.revealed.includes(i)||s.matched.includes(i)||s.revealed.length===2)return;s.revealed.push(i);if(s.revealed.length===2){let [a,b]=s.revealed;if(s.cards[a]===s.cards[b]){s.matched.push(a,b);s.revealed=[];s.score+=10;if(s.matched.length===16)finish()}else setTimeout(()=>{if(s&&s.mode==='memory')s.revealed=[]},700)}}
+if(m==='soccer'&&py>300&&s.shots>0){let lane=px<300?0:px<500?1:2;s.shots--;if(lane!==s.keeper)s.score+=20;s.keeper=Math.floor(Math.random()*3);if(!s.shots)finish()}
+if(m==='stack'){let p=s.blocks.at(-1),nx=100+s.move,over=Math.max(0,Math.min(p.x+p.w,nx+p.w)-Math.max(p.x,nx));if(over<18)finish();else{s.blocks.push({x:Math.max(p.x,nx),w:over});s.score+=10;s.move=Math.random()*160;if(s.blocks.length>=9)finish()}}
+if(['fruit','zombie','defend'].includes(m)){let j=s.objs.findIndex(o=>Math.hypot(o.x-px,o.y-py)<45);if(j>=0){let o=s.objs.splice(j,1)[0];if(m==='fruit'&&o.bad){s.lives--;if(!s.lives)finish()}else s.score+=10}}
+if(m==='space'||m==='dragon')s.px=px;
+if(m==='moto')s.jump=.8;
+});
+c.addEventListener('pointermove',e=>{if(!s)return;let r=c.getBoundingClientRect();if(['space','dragon'].includes(s.mode))s.px=(e.clientX-r.left)*800/r.width});
+document.addEventListener('keydown',e=>{if(!s)return;if(s.mode==='race'){if(e.key==='ArrowLeft')s.lane=Math.max(0,s.lane-1);if(e.key==='ArrowRight')s.lane=Math.min(2,s.lane+1)}if(e.key==='Escape')closeGame()});
 </script></body></html>
