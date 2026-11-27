@@ -83,7 +83,7 @@ function filterGames(t,b){
 function searchGames(){
   applyGameFilters();
   }
-function launch(i){let g=games[i];if(g[3]==='premium'){alert('Game ini khusus Premium Pass. Sistem akun dan verifikasi pembayaran sedang disiapkan.');return}start(i)}
+const c=document.getElementById('board'),x=c.getContext('2d');let s=null,raf=0,last=0;function launch(i){let g=games[i];if(g[3]==='premium'){alert('Game ini khusus Premium Pass. Sistem akun dan verifikasi pembayaran sedang disiapkan.');return}start(i)}
 function start(i){cancelAnimationFrame(raf);let g=games[i];s={i,mode:g[4],score:0,lives:3,t:0,spawn:0,objs:[],bullets:[],px:400,lane:1,over:false,blocks:[{x:180,w:440}],move:0,dir:1,cards:Array.from({length:8},(_,j)=>j+1).flatMap(v=>[v,v]).sort(()=>Math.random()-.5),revealed:[],matched:[],shots:5,keeper:Math.floor(Math.random()*3),jump:0};document.getElementById('gameTitle').textContent=g[1]+' '+g[0];document.getElementById('help').textContent=g[2]+' Kontrol: sentuh area permainan.';document.getElementById('playModal').classList.add('show');last=0;raf=requestAnimationFrame(loop)}
 function closeGame(){document.getElementById('playModal').classList.remove('show');cancelAnimationFrame(raf);s=null}
 function restartGame(){if(s)start(s.i)}
