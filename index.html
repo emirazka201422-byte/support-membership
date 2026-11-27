@@ -55,8 +55,34 @@ const games=[
 ];
 const grid=document.getElementById('gameGrid');
 games.forEach((g,i)=>{let a=document.createElement('article');a.className='game';a.dataset.type=g[3];a.innerHTML=`<div class="art">${g[1]}</div><div class="game-info"><div class="game-top"><h3>${g[0]}</h3><span class="tag ${g[3]}">${g[3]==='free'?'GRATIS':'PREMIUM'}</span></div><p>${g[2]}</p><button class="${g[3]==='premium'?'locked':''}" onclick="launch(${i})">${g[3]==='free'?'▶ Mainkan':'🔒 Premium Pass'}</button></div>`;grid.appendChild(a)});
-function filterGames(t,b){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.game').forEach(x=>x.style.display=t==='all'||x.dataset.type===t?'':'none')}
-const c=document.getElementById('board'),x=c.getContext('2d');let s=null,raf=0,last=0;
+let activeFilter='all';
+
+function applyGameFilters(){
+  const q=document.getElementById('gameSearch').value.trim().toLowerCase();
+  let shown=0;
+
+  document.querySelectorAll('.game').forEach((el,i)=>{
+    const matchesType=activeFilter==='all'||el.dataset.type===activeFilter;
+    const matchesText=games[i][0].toLowerCase().includes(q);
+    const visible=matchesType&&matchesText;
+
+    el.style.display=visible?'':'none';
+    if(visible) shown++;
+  });
+
+  document.getElementById('emptyState').style.display=shown?'none':'block';
+}
+
+function filterGames(t,b){
+  activeFilter=t;
+  document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  applyGameFilters();
+}
+
+function searchGames(){
+  applyGameFilters();
+  }
 function launch(i){let g=games[i];if(g[3]==='premium'){alert('Game ini khusus Premium Pass. Sistem akun dan verifikasi pembayaran sedang disiapkan.');return}start(i)}
 function start(i){cancelAnimationFrame(raf);let g=games[i];s={i,mode:g[4],score:0,lives:3,t:0,spawn:0,objs:[],bullets:[],px:400,lane:1,over:false,blocks:[{x:180,w:440}],move:0,dir:1,cards:Array.from({length:8},(_,j)=>j+1).flatMap(v=>[v,v]).sort(()=>Math.random()-.5),revealed:[],matched:[],shots:5,keeper:Math.floor(Math.random()*3),jump:0};document.getElementById('gameTitle').textContent=g[1]+' '+g[0];document.getElementById('help').textContent=g[2]+' Kontrol: sentuh area permainan.';document.getElementById('playModal').classList.add('show');last=0;raf=requestAnimationFrame(loop)}
 function closeGame(){document.getElementById('playModal').classList.remove('show');cancelAnimationFrame(raf);s=null}
